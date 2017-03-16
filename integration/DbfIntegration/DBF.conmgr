@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DBF"
+  DTS:DTSID="{241771BC-02B7-4491-8B4A-D238E0D53411}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=D:\GitHub\Naftan.CMMS\integration\OTN_DBF\;Provider=VFPOLEDB.1;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

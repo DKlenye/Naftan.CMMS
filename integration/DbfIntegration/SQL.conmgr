@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SQL"
+  DTS:DTSID="{CF95FE32-691E-4873-8643-C936701D5747}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=.;Initial Catalog=cmms;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DbfIntegration-{CF95FE32-691E-4873-8643-C936701D5747}LocalHost.cmms;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
