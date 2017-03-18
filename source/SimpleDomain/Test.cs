@@ -1,6 +1,4 @@
-﻿using System.Collections.Specialized;
-
-namespace Naftan.CMMS.SimpleDomain
+﻿namespace Naftan.CMMS.SimpleDomain
 {
     public class Test
     {

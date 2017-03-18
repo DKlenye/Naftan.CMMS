@@ -9,6 +9,9 @@ namespace Naftan.CMMS.Domain.References
     {
         public int Id { get; set; }
         public Reference Reference { get; set; }
+        /// <summary>
+        /// Значение справочника
+        /// </summary>
         public string Value { get; set; }
     }
 }

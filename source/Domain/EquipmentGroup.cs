@@ -6,9 +6,9 @@ using Naftan.Infrastructure.Domain;
 namespace Naftan.CMMS.Domain
 {
     /// <summary>
-    /// Группа объекта ремонта
+    /// Группа оборудования
     /// </summary>
-    public class RepairObjectGroup:TreeNode<RepairObjectGroup>, IEntity
+    public class EquipmentGroup:TreeNode<EquipmentGroup>, IEntity
     {
         private readonly IList<GroupSpecification> specifications = new List<GroupSpecification>();
 

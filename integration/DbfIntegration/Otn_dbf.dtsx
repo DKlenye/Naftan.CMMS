@@ -11,12 +11,918 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="Otn_dbf"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{5A176637-E9F8-4B02-88C0-E328FD2951A0}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{59506D69-2360-49CF-A268-679327E8FAAF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Журнал наработки оборудования (CE8)"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FFDD3A59-B6F0-4A5C-877B-C5DAF10527E9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Журнал наработки оборудования (CE8)"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DBF_CE8]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{CF95FE32-691E-4873-8643-C936701D5747}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[god]"
+                      cachedDataType="numeric"
+                      cachedName="god"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[god]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[god]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nm]"
+                      cachedDataType="numeric"
+                      cachedName="nm"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nm]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nm]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[km]"
+                      cachedDataType="numeric"
+                      cachedName="km"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[km]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[km]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kvo]"
+                      cachedDataType="numeric"
+                      cachedName="kvo"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kvo]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kvo]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kc]"
+                      cachedDataType="numeric"
+                      cachedName="kc"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kc]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kc]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ku]"
+                      cachedDataType="numeric"
+                      cachedName="ku"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ku]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ku]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ti]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ti"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ti]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ti]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[mrk]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="mrk"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mrk]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[mrk]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kg]"
+                      cachedDataType="numeric"
+                      cachedName="kg"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kg]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kg]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[narn]"
+                      cachedDataType="numeric"
+                      cachedName="narn"
+                      cachedPrecision="7"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[narn]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[narn]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nd]"
+                      cachedDataType="numeric"
+                      cachedName="nd"
+                      cachedPrecision="3"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nd]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nd]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kfop]"
+                      cachedDataType="numeric"
+                      cachedName="kfop"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kfop]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfop]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kftp]"
+                      cachedDataType="numeric"
+                      cachedName="kftp"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kftp]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kftp]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kfsp]"
+                      cachedDataType="numeric"
+                      cachedName="kfsp"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kfsp]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfsp]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kfkp]"
+                      cachedDataType="numeric"
+                      cachedName="kfkp"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kfkp]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfkp]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[vr]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="vr"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vr]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vr]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[vrf]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="vrf"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vrf]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vrf]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kp]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="kp"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kp]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kp]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[pr]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="pr"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pr]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[pr]" />
+                    <inputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[vn]"
+                      cachedDataType="numeric"
+                      cachedName="vn"
+                      cachedPrecision="3"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vn]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[god]"
+                      dataType="numeric"
+                      name="god"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nm]"
+                      dataType="numeric"
+                      name="nm"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[km]"
+                      dataType="numeric"
+                      name="km"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kvo]"
+                      dataType="numeric"
+                      name="kvo"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kc]"
+                      dataType="numeric"
+                      name="kc"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ku]"
+                      dataType="numeric"
+                      name="ku"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ti]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="ti" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mrk]"
+                      codePage="1251"
+                      dataType="str"
+                      length="17"
+                      name="mrk" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kg]"
+                      dataType="numeric"
+                      name="kg"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[narn]"
+                      dataType="numeric"
+                      name="narn"
+                      precision="7" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nd]"
+                      dataType="numeric"
+                      name="nd"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kfop]"
+                      dataType="numeric"
+                      name="kfop"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kftp]"
+                      dataType="numeric"
+                      name="kftp"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kfsp]"
+                      dataType="numeric"
+                      name="kfsp"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kfkp]"
+                      dataType="numeric"
+                      name="kfkp"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="vr" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vrf]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="vrf" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kp]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="kp" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="pr" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vn]"
+                      dataType="numeric"
+                      name="vn"
+                      precision="3" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">ce8</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{241771BC-02B7-4491-8B4A-D238E0D53411}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBF]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[god]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[god]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[god]"
+                      name="god"
+                      precision="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nm]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nm]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nm]"
+                      name="nm"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[km]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[km]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[km]"
+                      name="km"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kvo]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kvo]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kvo]"
+                      name="kvo"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kc]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kc]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kc]"
+                      name="kc"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ku]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ku]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ku]"
+                      name="ku"
+                      precision="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ti]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ti]"
+                      length="10"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ti]"
+                      name="ti"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[mrk]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mrk]"
+                      length="17"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[mrk]"
+                      name="mrk"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kg]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kg]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kg]"
+                      name="kg"
+                      precision="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[narn]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[narn]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[narn]"
+                      name="narn"
+                      precision="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nd]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nd]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nd]"
+                      name="nd"
+                      precision="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfop]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kfop]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfop]"
+                      name="kfop"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kftp]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kftp]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kftp]"
+                      name="kftp"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfsp]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kfsp]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfsp]"
+                      name="kfsp"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfkp]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kfkp]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfkp]"
+                      name="kfkp"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vr]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[vr]"
+                      length="1"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vr]"
+                      name="vr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vrf]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[vrf]"
+                      length="1"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vrf]"
+                      name="vrf"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kp]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kp]"
+                      length="1"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kp]"
+                      name="kp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[pr]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pr]"
+                      length="1"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[pr]"
+                      name="pr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vn]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[vn]"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vn]"
+                      name="vn"
+                      precision="3"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[god]"
+                      dataType="numeric"
+                      name="god"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nm]"
+                      dataType="numeric"
+                      name="nm"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[km]"
+                      dataType="numeric"
+                      name="km"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kvo]"
+                      dataType="numeric"
+                      name="kvo"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kc]"
+                      dataType="numeric"
+                      name="kc"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ku]"
+                      dataType="numeric"
+                      name="ku"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ti]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="ti" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mrk]"
+                      codePage="1251"
+                      dataType="str"
+                      length="17"
+                      name="mrk" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kg]"
+                      dataType="numeric"
+                      name="kg"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[narn]"
+                      dataType="numeric"
+                      name="narn"
+                      precision="7" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nd]"
+                      dataType="numeric"
+                      name="nd"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kfop]"
+                      dataType="numeric"
+                      name="kfop"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kftp]"
+                      dataType="numeric"
+                      name="kftp"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kfsp]"
+                      dataType="numeric"
+                      name="kfsp"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kfkp]"
+                      dataType="numeric"
+                      name="kfkp"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[vr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="vr" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[vrf]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="vrf" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kp]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="kp" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="pr" />
+                    <externalMetadataColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[vn]"
+                      dataType="numeric"
+                      name="vn"
+                      precision="3" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[god]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[god]"
+                      name="god"
+                      precision="4" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nm]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nm]"
+                      name="nm"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[km]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[km]"
+                      name="km"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kvo]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kvo]"
+                      name="kvo"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kc]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kc]"
+                      name="kc"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ku]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ku]"
+                      name="ku"
+                      precision="4" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ti]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ti]"
+                      name="ti" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mrk]"
+                      codePage="1251"
+                      dataType="str"
+                      length="17"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mrk]"
+                      name="mrk" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kg]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kg]"
+                      name="kg"
+                      precision="4" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[narn]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[narn]"
+                      name="narn"
+                      precision="7" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nd]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nd]"
+                      name="nd"
+                      precision="3" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kfop]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kfop]"
+                      name="kfop"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kftp]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kftp]"
+                      name="kftp"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kfsp]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kfsp]"
+                      name="kfsp"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kfkp]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kfkp]"
+                      name="kfkp"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[vr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[vr]"
+                      name="vr" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[vrf]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[vrf]"
+                      name="vrf" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kp]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kp]"
+                      name="kp" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pr]"
+                      name="pr" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[vn]"
+                      dataType="numeric"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[vn]"
+                      name="vn"
+                      precision="3" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Журнал наработки оборудования (CE8).Paths[OLE DB Source Output]"
+              endId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Импорт  пользовательские справочники (CY08)"
       DTS:CreationName="Microsoft.Pipeline"
@@ -8721,7 +9627,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{CF95FE32-691E-4873-8643-C936701D5747}"
-          SQLTask:SqlStatementSource="DELETE FROM dbf_CY00&#xA;DELETE FROM dbf_CY02&#xA;DELETE FROM dbf_CY03&#xA;DELETE FROM dbf_CY04&#xA;DELETE FROM dbf_CY05&#xA;DELETE FROM dbf_CY06&#xA;DELETE FROM dbf_CY07&#xA;DELETE FROM dbf_CY08&#xA;DELETE FROM dbf_CY09&#xA;DELETE FROM dbf_CY15&#xA;DELETE FROM dbf_CY17&#xA;DELETE FROM dbf_CY18&#xA;DELETE FROM dbf_CY27&#xA;DELETE FROM dbf_CY28" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DELETE FROM dbf_CY00&#xA;DELETE FROM dbf_CY02&#xA;DELETE FROM dbf_CY03&#xA;DELETE FROM dbf_CY04&#xA;DELETE FROM dbf_CY05&#xA;DELETE FROM dbf_CY06&#xA;DELETE FROM dbf_CY07&#xA;DELETE FROM dbf_CY08&#xA;DELETE FROM dbf_CY09&#xA;DELETE FROM dbf_CY15&#xA;DELETE FROM dbf_CY17&#xA;DELETE FROM dbf_CY18&#xA;DELETE FROM dbf_CY27&#xA;DELETE FROM dbf_CY28&#xA;DELETE FROM dbf_CE8" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -8774,6 +9680,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 13"
       DTS:To="Package\Импорт причин (CY05)" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 14]"
+      DTS:CreationName=""
+      DTS:DTSID="{6C944075-274B-48B4-83B8-0D4C31E49CB6}"
+      DTS:From="Package\Импорт причин (CY05)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 14"
+      DTS:To="Package\Журнал наработки оборудования (CE8)" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -8852,6 +9766,10 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="313,42"
+          Id="Package\Импорт  пользовательские справочники (CY08)"
+          TopLeft="487,38" />
+        <NodeLayout
           Size="323,50"
           Id="Package\Импорт база грузоподъёмных механизмов (CY15)"
           TopLeft="72,645" />
@@ -8862,7 +9780,7 @@
         <NodeLayout
           Size="308,42"
           Id="Package\Импорт Виды оборудования (CY03)"
-          TopLeft="70,179" />
+          TopLeft="57,178" />
         <NodeLayout
           Size="338,42"
           Id="Package\Импорт Группы Грузоподъёмных механизмов (CY09)"
@@ -8870,7 +9788,7 @@
         <NodeLayout
           Size="265,42"
           Id="Package\Импорт Группы Оборудования (CY04)"
-          TopLeft="75,252" />
+          TopLeft="62,251" />
         <NodeLayout
           Size="311,42"
           Id="Package\Импорт марки МО и нормы трудозатрат (CY18)"
@@ -8884,13 +9802,17 @@
           Id="Package\Импорт межремонтные интервалы для ГМ (CY17)"
           TopLeft="92,796" />
         <NodeLayout
+          Size="190,42"
+          Id="Package\Импорт причин (CY05)"
+          TopLeft="547,112" />
+        <NodeLayout
           Size="230,42"
           Id="Package\Импорт Производители (CY06)"
-          TopLeft="100,327" />
+          TopLeft="87,326" />
         <NodeLayout
           Size="184,42"
           Id="Package\Импорт Среда (CY07)"
-          TopLeft="128,410" />
+          TopLeft="115,409" />
         <NodeLayout
           Size="328,42"
           Id="Package\Импорт Типы Грузоподъёмных механизмов (CY08)"
@@ -8898,7 +9820,7 @@
         <NodeLayout
           Size="316,42"
           Id="Package\Импорт Цеха и Производства, Установки (CY02)"
-          TopLeft="65,103" />
+          TopLeft="52,102" />
         <NodeLayout
           Size="159,42"
           Id="Package\Очистка данных"
@@ -8909,26 +9831,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="74.5,38"
+              EndConnector="61.5,37"
               Start="0,0"
-              End="74.5,30.5">
+              End="61.5,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15" />
+                    End="0,14.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15"
-                    Point2="0,19"
-                    Point3="4,19" />
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
                   <mssgle:LineSegment
-                    End="70.5,19" />
+                    End="57.5,18.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="70.5,19"
-                    Point2="74.5,19"
-                    Point3="74.5,23" />
+                    Point1="57.5,18.5"
+                    Point2="61.5,18.5"
+                    Point3="61.5,22.5" />
                   <mssgle:LineSegment
-                    End="74.5,30.5" />
+                    End="61.5,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8939,7 +9861,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="223.5,145">
+          TopLeft="210.5,144">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9028,8 +9950,64 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="228,44">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="259,15"
+              Start="0,0"
+              End="251.5,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="125.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="125.5,0"
+                    Point2="129.5,0"
+                    Point3="129.5,4" />
+                  <mssgle:LineSegment
+                    End="129.5,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129.5,11"
+                    Point2="129.5,15"
+                    Point3="133.5,15" />
+                  <mssgle:LineSegment
+                    End="251.5,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="642.75,80">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="224,221">
+          TopLeft="211,220">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9063,7 +10041,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="217.5,369">
+          TopLeft="204.5,368">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9107,7 +10085,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="211.25,294">
+          TopLeft="198.25,293">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9129,30 +10107,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="220,452">
+          TopLeft="207,451">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19,32"
+              EndConnector="32,33"
               Start="0,0"
-              End="19,24.5">
+              End="32,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12" />
+                    End="0,12.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12"
-                    Point2="0,16"
-                    Point3="4,16" />
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="4,16.5" />
                   <mssgle:LineSegment
-                    End="15,16" />
+                    End="28,16.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="15,16"
-                    Point2="19,16"
-                    Point3="19,20" />
+                    Point1="28,16.5"
+                    Point2="32,16.5"
+                    Point3="32,20.5" />
                   <mssgle:LineSegment
-                    End="19,24.5" />
+                    End="32,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9240,73 +10218,23 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="313,42"
-          Id="Package\Импорт  пользовательские справочники (CY08)"
-          TopLeft="487,38" />
-        <NodeLayout
-          Size="190,42"
-          Id="Package\Импорт причин (CY05)"
-          TopLeft="492,111" />
+          Size="274,42"
+          Id="Package\Журнал наработки оборудования (CE8)"
+          TopLeft="507,196" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="228,44">
+          Id="Package.PrecedenceConstraints[Constraint 14]"
+          TopLeft="643,154">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="259,15"
+              EndConnector="0,42"
               Start="0,0"
-              End="251.5,15">
+              End="0,34.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="125.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="125.5,0"
-                    Point2="129.5,0"
-                    Point3="129.5,4" />
-                  <mssgle:LineSegment
-                    End="129.5,11" />
-                  <mssgle:CubicBezierSegment
-                    Point1="129.5,11"
-                    Point2="129.5,15"
-                    Point3="133.5,15" />
-                  <mssgle:LineSegment
-                    End="251.5,15" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="643.5,80">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-56.5,31"
-              Start="0,0"
-              End="-56.5,23.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.5"
-                    Point2="0,15.5"
-                    Point3="-4,15.5" />
-                  <mssgle:LineSegment
-                    End="-52.5,15.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-52.5,15.5"
-                    Point2="-56.5,15.5"
-                    Point3="-56.5,19.5" />
-                  <mssgle:LineSegment
-                    End="-56.5,23.5" />
+                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9319,18 +10247,96 @@
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Импорт  пользовательские справочники (CY08)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Импорт  пользовательские справочники (CY08)\OLE DB Source"
+          TopLeft="224,71" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Импорт  пользовательские справочники (CY08)\OLE DB Destination"
+          TopLeft="264,162" />
+        <EdgeLayout
+          Id="Package\Импорт  пользовательские справочники (CY08).Paths[OLE DB Source Output]"
+          TopLeft="299,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50.5,49"
+              Start="0,0"
+              End="50.5,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="4,24.5" />
+                  <mssgle:LineSegment
+                    End="46.5,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.5,24.5"
+                    Point2="50.5,24.5"
+                    Point3="50.5,28.5" />
+                  <mssgle:LineSegment
+                    End="50.5,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Импорт  пользовательские справочники (CY08)\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Импорт  пользовательские справочники (CY08)\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Импорт база грузоподъёмных механизмов (CY15)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Импорт база грузоподъёмных механизмов (CY15)\OLE DB Source"
-          TopLeft="378,216" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Импорт база грузоподъёмных механизмов (CY15)\OLE DB Destination"
           TopLeft="413,298" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Импорт база грузоподъёмных механизмов (CY15)\OLE DB Source"
+          TopLeft="378,216" />
         <EdgeLayout
           Id="Package\Импорт база грузоподъёмных механизмов (CY15).Paths[OLE DB Source Output]"
           TopLeft="453,258">
@@ -9362,7 +10368,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9398,15 +10406,15 @@
     design-time-name="Package\Импорт база машинного оборудования (CY28)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Импорт база машинного оборудования (CY28)\OLE DB Destination"
-          TopLeft="326,102" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\Импорт база машинного оборудования (CY28)\OLE DB Source"
           TopLeft="333,18" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Импорт база машинного оборудования (CY28)\OLE DB Destination"
+          TopLeft="326,102" />
         <EdgeLayout
           Id="Package\Импорт база машинного оборудования (CY28).Paths[OLE DB Source Output]"
           TopLeft="409.75,60">
@@ -9426,7 +10434,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9540,15 +10550,15 @@
     design-time-name="Package\Импорт Группы Грузоподъёмных механизмов (CY09)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Импорт Группы Грузоподъёмных механизмов (CY09)\OLE DB Destination"
-          TopLeft="343,203" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\Импорт Группы Грузоподъёмных механизмов (CY09)\OLE DB Source"
           TopLeft="343,93" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Импорт Группы Грузоподъёмных механизмов (CY09)\OLE DB Destination"
+          TopLeft="343,203" />
         <EdgeLayout
           Id="Package\Импорт Группы Грузоподъёмных механизмов (CY09).Paths[OLE DB Source Output]"
           TopLeft="418,135">
@@ -9580,7 +10590,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9682,15 +10694,15 @@
     design-time-name="Package\Импорт марки МО и нормы трудозатрат (CY18)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Импорт марки МО и нормы трудозатрат (CY18)\OLE DB Source"
-          TopLeft="391,157" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Импорт марки МО и нормы трудозатрат (CY18)\OLE DB Destination"
           TopLeft="398,232" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Импорт марки МО и нормы трудозатрат (CY18)\OLE DB Source"
+          TopLeft="391,157" />
         <EdgeLayout
           Id="Package\Импорт марки МО и нормы трудозатрат (CY18).Paths[OLE DB Source Output]"
           TopLeft="466,199">
@@ -9722,7 +10734,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9758,15 +10772,15 @@
     design-time-name="Package\Импорт Межрементные интервалы для Машинного оборудования (CY27)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Импорт Межрементные интервалы для Машинного оборудования (CY27)\OLE DB Destination"
-          TopLeft="392,170" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\Импорт Межрементные интервалы для Машинного оборудования (CY27)\OLE DB Source"
           TopLeft="410,62" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Импорт Межрементные интервалы для Машинного оборудования (CY27)\OLE DB Destination"
+          TopLeft="392,170" />
         <EdgeLayout
           Id="Package\Импорт Межрементные интервалы для Машинного оборудования (CY27).Paths[OLE DB Source Output]"
           TopLeft="481.25,104">
@@ -9786,7 +10800,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9822,7 +10838,7 @@
     design-time-name="Package\Импорт межремонтные интервалы для ГМ (CY17)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\Импорт межремонтные интервалы для ГМ (CY17)\OLE DB Source"
@@ -9862,7 +10878,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9898,7 +10916,7 @@
     design-time-name="Package\Импорт Производители (CY06)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\Импорт Производители (CY06)\OLE DB Source"
@@ -9938,7 +10956,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9974,7 +10994,7 @@
     design-time-name="Package\Импорт Среда (CY07)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\Импорт Среда (CY07)\OLE DB Source"
@@ -10014,7 +11034,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10050,15 +11072,15 @@
     design-time-name="Package\Импорт Типы Грузоподъёмных механизмов (CY08)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Импорт Типы Грузоподъёмных механизмов (CY08)\OLE DB Destination"
-          TopLeft="275,105" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\Импорт Типы Грузоподъёмных механизмов (CY08)\OLE DB Source"
           TopLeft="274,24" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Импорт Типы Грузоподъёмных механизмов (CY08)\OLE DB Destination"
+          TopLeft="275,105" />
         <EdgeLayout
           Id="Package\Импорт Типы Грузоподъёмных механизмов (CY08).Paths[OLE DB Source Output]"
           TopLeft="349,66">
@@ -10090,7 +11112,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10189,44 +11213,44 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Импорт  пользовательские справочники (CY08)">
+    design-time-name="Package\Журнал наработки оборудования (CE8)">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150,42"
-          Id="Package\Импорт  пользовательские справочники (CY08)\OLE DB Source"
-          TopLeft="224,71" />
+          Id="Package\Журнал наработки оборудования (CE8)\OLE DB Source"
+          TopLeft="376,163" />
         <NodeLayout
           Size="171,42"
-          Id="Package\Импорт  пользовательские справочники (CY08)\OLE DB Destination"
-          TopLeft="264,162" />
+          Id="Package\Журнал наработки оборудования (CE8)\OLE DB Destination"
+          TopLeft="375,270" />
         <EdgeLayout
-          Id="Package\Импорт  пользовательские справочники (CY08).Paths[OLE DB Source Output]"
-          TopLeft="299,113">
+          Id="Package\Журнал наработки оборудования (CE8).Paths[OLE DB Source Output]"
+          TopLeft="451,205">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="50.5,49"
+              EndConnector="9.5,65"
               Start="0,0"
-              End="50.5,41.5">
+              End="9.5,57.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5" />
+                    End="0,28.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="4,24.5" />
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
                   <mssgle:LineSegment
-                    End="46.5,24.5" />
+                    End="5.5,32.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="46.5,24.5"
-                    Point2="50.5,24.5"
-                    Point3="50.5,28.5" />
+                    Point1="5.5,32.5"
+                    Point2="9.5,32.5"
+                    Point3="9.5,36.5" />
                   <mssgle:LineSegment
-                    End="50.5,41.5" />
+                    End="9.5,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10239,7 +11263,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Импорт  пользовательские справочники (CY08)\OLE DB Source">
+    design-time-name="Package\Журнал наработки оборудования (CE8)\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10252,7 +11276,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Импорт  пользовательские справочники (CY08)\OLE DB Destination">
+    design-time-name="Package\Журнал наработки оборудования (CE8)\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

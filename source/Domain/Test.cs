@@ -8,9 +8,9 @@ namespace Naftan.CMMS.Domain
         public void CreateNewObject()
         {
 
-            var eMotors = new RepairObjectGroup {Name = "Электродвигатели"};
-            var eMotorType = new RepairObjectGroup {Name = "ЭД синхронный с к.з. ротором"};
-            var eMotorModel = new RepairObjectGroup {Name = "ВА572-2"};
+            var eMotors = new EquipmentGroup {Name = "Электродвигатели"};
+            var eMotorType = new EquipmentGroup {Name = "ЭД синхронный с к.з. ротором"};
+            var eMotorModel = new EquipmentGroup {Name = "ВА572-2"};
 
             eMotors.AddChild(eMotorType);
             eMotorType.AddChild(eMotorModel);
@@ -43,7 +43,7 @@ namespace Naftan.CMMS.Domain
             eMotors.AddSpecification(new GroupSpecification(rpmSpec));
             eMotors.AddSpecification(new GroupSpecification(rpmSpec));
 
-            var eMotor = new RepairObject(eMotorModel)
+            var eMotor = new Equipment(eMotorModel)
             {
                 FactoryNumber = "3452",
                 InventoryNumber = "123456678",

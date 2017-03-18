@@ -12,6 +12,9 @@ namespace Naftan.CMMS.Domain.References
         public ICollection<ReferenceValue> values = new HashSet<ReferenceValue>();
 
         public int Id { get; set; }
+        /// <summary>
+        /// Наименование справочника
+        /// </summary>
         public string Name { get; set; }
 
         public IEnumerable<ReferenceValue> Values { get; set; }

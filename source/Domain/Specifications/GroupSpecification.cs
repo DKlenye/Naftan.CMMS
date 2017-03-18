@@ -10,7 +10,7 @@ namespace Naftan.CMMS.Domain.Specifications
         }
 
         public int Id { get; set; }
-        public RepairObjectGroup Group { get; set; }
+        public EquipmentGroup Group { get; set; }
         public Specification Specification { get; private set; }
         public string DefaultValue { get; set; }
     }

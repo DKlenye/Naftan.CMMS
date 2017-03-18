@@ -8,24 +8,25 @@ namespace Naftan.CMMS.Domain
     /// <summary>
     /// Объект ремонта
     /// </summary>
-    public class RepairObject:TreeNode<RepairObject>, IEntity
+    public class Equipment:TreeNode<Equipment>, IEntity
     {
         private readonly ICollection<ObjectSpecification> specifications = new HashSet<ObjectSpecification>();
 
-        public RepairObject(RepairObjectGroup group)
+        public Equipment(EquipmentGroup group)
         {
             Group = group;
             AddSpecificationsFromGroup(group);
         }
 
         public int Id { get; set; }
-        public RepairObjectGroup Group { get; private set; }
+        public EquipmentGroup Group { get; private set; }
         public Plant Plant { get; set; }
         public Environment Environment { get; set; }
         public Manufacturer Manufacturer { get; set; }
         public string FactoryNumber { get; set; }
         public string InventoryNumber { get; set; }
-        
+        public string TechIndex { get; set; }
+
         public IEnumerable<ObjectSpecification> Specifications => specifications;
 
         public void AddSpecification(ObjectSpecification specification)
@@ -36,7 +37,7 @@ namespace Naftan.CMMS.Domain
             }
         }
 
-        private void AddSpecificationsFromGroup(RepairObjectGroup group)
+        private void AddSpecificationsFromGroup(EquipmentGroup group)
         {
             group.Specifications.ToList().ForEach(f=>AddSpecification(new ObjectSpecification {Specification = f.Specification,Value = f.DefaultValue}));
             if(group.Parent!=null)
