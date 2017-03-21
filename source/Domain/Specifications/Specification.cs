@@ -1,4 +1,4 @@
-﻿using Naftan.CMMS.Domain.References;
+﻿using Naftan.CMMS.Domain.UserReferences;
 using Naftan.Infrastructure.Domain;
 
 namespace Naftan.CMMS.Domain.Specifications

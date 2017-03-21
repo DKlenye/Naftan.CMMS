@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Naftan.CMMS.Domain.Specifications;
 using Naftan.Infrastructure.Domain;
@@ -8,18 +9,18 @@ namespace Naftan.CMMS.Domain
     /// <summary>
     /// Объект ремонта
     /// </summary>
-    public class Equipment:TreeNode<Equipment>, IEntity
+    public class RepairObject:TreeNode<RepairObject>, IEntity
     {
         private readonly ICollection<ObjectSpecification> specifications = new HashSet<ObjectSpecification>();
 
-        public Equipment(EquipmentGroup group)
+        public RepairObject(RepairObjectGroup group)
         {
             Group = group;
             AddSpecificationsFromGroup(group);
         }
 
         public int Id { get; set; }
-        public EquipmentGroup Group { get; private set; }
+        public RepairObjectGroup Group { get; private set; }
         public Plant Plant { get; set; }
         public Environment Environment { get; set; }
         public Manufacturer Manufacturer { get; set; }
@@ -37,17 +38,12 @@ namespace Naftan.CMMS.Domain
             }
         }
 
-        private void AddSpecificationsFromGroup(EquipmentGroup group)
+        private void AddSpecificationsFromGroup(RepairObjectGroup group)
         {
             group.Specifications.ToList().ForEach(f=>AddSpecification(new ObjectSpecification {Specification = f.Specification,Value = f.DefaultValue}));
             if(group.Parent!=null)
                 AddSpecificationsFromGroup(group.Parent);
         }
-
-
-
-
-
-
+        
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Naftan.Infrastructure.Domain;
 
-namespace Naftan.CMMS.Domain.References
+namespace Naftan.CMMS.Domain.UserReferences
 {
     /// <summary>
     /// Пользовательский справочник

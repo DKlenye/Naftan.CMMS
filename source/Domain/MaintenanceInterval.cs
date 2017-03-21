@@ -11,7 +11,7 @@ namespace Naftan.CMMS.Domain
 
         public MaintenanceType MaintenanceType { get; set; }
         public MeasureUnit MeasureUnit { get; set; }
-        public EquipmentGroup Group { get; set; }
+        public RepairObjectGroup Group { get; set; }
 
         /// <summary>
         /// Наработка минимальная. Её может не быть

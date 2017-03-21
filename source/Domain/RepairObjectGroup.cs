@@ -8,9 +8,9 @@ namespace Naftan.CMMS.Domain
     /// <summary>
     /// Группа оборудования
     /// </summary>
-    public class EquipmentGroup:TreeNode<EquipmentGroup>, IEntity
+    public class RepairObjectGroup:TreeNode<RepairObjectGroup>, IEntity
     {
-        private readonly IList<GroupSpecification> specifications = new List<GroupSpecification>();
+        private readonly ICollection<GroupSpecification> specifications = new HashSet<GroupSpecification>();
 
         public int Id { get; set; }
         public string Name { get; set; }
