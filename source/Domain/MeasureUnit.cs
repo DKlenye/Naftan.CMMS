@@ -11,7 +11,7 @@ namespace Naftan.CMMS.Domain
         /// <summary>
         /// Наименование
         /// </summary>
-        public string Name { get; set; }
+       public string Name { get; set; }
         /// <summary>
         /// Обозначение
         /// </summary>

@@ -1,0 +1,1516 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/23/2017 2:48:10 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KDN8"
+  DTS:CreatorName="LAN\kdn"
+  DTS:DTSID="{7C959119-7D98-48B7-A65B-BE972855195E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="EDV"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{AA8A446A-A1F8-4CF7-B5E0-9A39960CD388}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[EDV_DB]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{AEBE082C-5F3F-4D27-947F-2F59A861A768}"
+      DTS:ObjectName="EDV_DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Dsn=EDV_DB;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{01D91AC4-05E7-4259-A8A3-703DB5E9A809}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CF95FE32-691E-4873-8643-C936701D5747}"
+          SQLTask:SqlStatementSource="truncate table EDV_ed&#xA;truncate table EDV_edtime" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\наработка часов электродвигателей (edtime)"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F185F3E4-1E5B-41CB-A2D1-791EBA945E05}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="наработка часов электродвигателей (edtime)"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\наработка часов электродвигателей (edtime)\ODBC Source"
+              componentClassID="Attunity.SSISODBCSrc"
+              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;6"
+              description="ODBC Source"
+              name="ODBC Source"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The name of the table to be fetched."
+                  expressionType="Notify"
+                  name="TableName">`edtime`</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows fetched per batch."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines the chunk size allocation for LOB columns"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines how the component exposes CHAR columns. If False, CHAR columns are exposed as (multi-)byte strings (DT_STR), if True, CHAR columns are exposed as wide strings (DT_WSTR)"
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The code page to use when code page information is unavailable from the data source."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Int32"
+                  description="The mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The method used for fetching data."
+                  expressionType="Notify"
+                  name="FetchMethod"
+                  typeConverter="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="The ODBC C data type for binding numeric data."
+                  expressionType="Notify"
+                  name="BindNumericAs"
+                  typeConverter="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs"
+                  typeConverter="BindCharColumnsAs">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Connections[ODBCConnection]"
+                  connectionManagerID="Package.ConnectionManagers[EDV_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[EDV_DB]"
+                  description="The ODBC runtime connection"
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output]"
+                  errorRowDisposition="FailComponent"
+                  name="ODBC Source Output"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[ID_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[ID_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[ID_EDT]"
+                      name="ID_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[DateE_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DateE_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[DateE_EDT]"
+                      name="DateE_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[DateT_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DateT_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[DateT_EDT]"
+                      name="DateT_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HDateT_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HDateT_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HDateT_EDT]"
+                      name="HDateT_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[DateC_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DateC_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[DateC_EDT]"
+                      name="DateC_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HDateC_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HDateC_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HDateC_EDT]"
+                      name="HDateC_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[DateK_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DateK_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[DateK_EDT]"
+                      name="DateK_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HDateK_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HDateK_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HDateK_EDT]"
+                      name="HDateK_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HHourE_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HHourE_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HHourE_EDT]"
+                      name="HHourE_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HourE_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HourE_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HourE_EDT]"
+                      name="HourE_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HHourT_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HHourT_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HHourT_EDT]"
+                      name="HHourT_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HourT_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HourT_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HourT_EDT]"
+                      name="HourT_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HHourC_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HHourC_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HHourC_EDT]"
+                      name="HHourC_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HourC_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HourC_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HourC_EDT]"
+                      name="HourC_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HHourK_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HHourK_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HHourK_EDT]"
+                      name="HHourK_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HourK_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HourK_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HourK_EDT]"
+                      name="HourK_EDT" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[ID_EDT]"
+                      dataType="i4"
+                      name="ID_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DateE_EDT]"
+                      dataType="dbDate"
+                      name="DateE_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DateT_EDT]"
+                      dataType="dbDate"
+                      name="DateT_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HDateT_EDT]"
+                      dataType="dbDate"
+                      name="HDateT_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DateC_EDT]"
+                      dataType="dbDate"
+                      name="DateC_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HDateC_EDT]"
+                      dataType="dbDate"
+                      name="HDateC_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DateK_EDT]"
+                      dataType="dbDate"
+                      name="DateK_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HDateK_EDT]"
+                      dataType="dbDate"
+                      name="HDateK_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HHourE_EDT]"
+                      dataType="i4"
+                      name="HHourE_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HourE_EDT]"
+                      dataType="i4"
+                      name="HourE_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HHourT_EDT]"
+                      dataType="i4"
+                      name="HHourT_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HourT_EDT]"
+                      dataType="i4"
+                      name="HourT_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HHourC_EDT]"
+                      dataType="i4"
+                      name="HHourC_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HourC_EDT]"
+                      dataType="i4"
+                      name="HourC_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HHourK_EDT]"
+                      dataType="i4"
+                      name="HHourK_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HourK_EDT]"
+                      dataType="i4"
+                      name="HourK_EDT" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output]"
+                  isErrorOut="true"
+                  name="ODBC Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ID_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[ID_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ID_EDT]"
+                      name="ID_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[DateE_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DateE_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[DateE_EDT]"
+                      name="DateE_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[DateT_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DateT_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[DateT_EDT]"
+                      name="DateT_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HDateT_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HDateT_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HDateT_EDT]"
+                      name="HDateT_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[DateC_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DateC_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[DateC_EDT]"
+                      name="DateC_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HDateC_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HDateC_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HDateC_EDT]"
+                      name="HDateC_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[DateK_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[DateK_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[DateK_EDT]"
+                      name="DateK_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HDateK_EDT]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HDateK_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HDateK_EDT]"
+                      name="HDateK_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HHourE_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HHourE_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HHourE_EDT]"
+                      name="HHourE_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HourE_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HourE_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HourE_EDT]"
+                      name="HourE_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HHourT_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HHourT_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HHourT_EDT]"
+                      name="HHourT_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HourT_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HourT_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HourT_EDT]"
+                      name="HourT_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HHourC_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HHourC_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HHourC_EDT]"
+                      name="HHourC_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HourC_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HourC_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HourC_EDT]"
+                      name="HourC_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HHourK_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HHourK_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HHourK_EDT]"
+                      name="HHourK_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HourK_EDT]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[HourK_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[HourK_EDT]"
+                      name="HourK_EDT" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[EDV_edtime]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{CF95FE32-691E-4873-8643-C936701D5747}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_EDT]"
+                      cachedDataType="i4"
+                      cachedName="ID_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[ID_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateE_EDT]"
+                      cachedDataType="dbDate"
+                      cachedName="DateE_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateE_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[DateE_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateT_EDT]"
+                      cachedDataType="dbDate"
+                      cachedName="DateT_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateT_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[DateT_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HDateT_EDT]"
+                      cachedDataType="dbDate"
+                      cachedName="HDateT_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HDateT_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HDateT_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateC_EDT]"
+                      cachedDataType="dbDate"
+                      cachedName="DateC_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateC_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[DateC_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HDateC_EDT]"
+                      cachedDataType="dbDate"
+                      cachedName="HDateC_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HDateC_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HDateC_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateK_EDT]"
+                      cachedDataType="dbDate"
+                      cachedName="DateK_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateK_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[DateK_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HDateK_EDT]"
+                      cachedDataType="dbDate"
+                      cachedName="HDateK_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HDateK_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HDateK_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HHourE_EDT]"
+                      cachedDataType="i4"
+                      cachedName="HHourE_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HHourE_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HHourE_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HourE_EDT]"
+                      cachedDataType="i4"
+                      cachedName="HourE_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HourE_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HourE_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HHourT_EDT]"
+                      cachedDataType="i4"
+                      cachedName="HHourT_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HHourT_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HHourT_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HourT_EDT]"
+                      cachedDataType="i4"
+                      cachedName="HourT_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HourT_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HourT_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HHourC_EDT]"
+                      cachedDataType="i4"
+                      cachedName="HHourC_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HHourC_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HHourC_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HourC_EDT]"
+                      cachedDataType="i4"
+                      cachedName="HourC_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HourC_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HourC_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HHourK_EDT]"
+                      cachedDataType="i4"
+                      cachedName="HHourK_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HHourK_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HHourK_EDT]" />
+                    <inputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HourK_EDT]"
+                      cachedDataType="i4"
+                      cachedName="HourK_EDT"
+                      externalMetadataColumnId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HourK_EDT]"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output].Columns[HourK_EDT]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_EDT]"
+                      dataType="i4"
+                      name="ID_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateE_EDT]"
+                      dataType="wstr"
+                      length="10"
+                      name="DateE_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateT_EDT]"
+                      dataType="wstr"
+                      length="10"
+                      name="DateT_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HDateT_EDT]"
+                      dataType="wstr"
+                      length="10"
+                      name="HDateT_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateC_EDT]"
+                      dataType="wstr"
+                      length="10"
+                      name="DateC_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HDateC_EDT]"
+                      dataType="wstr"
+                      length="10"
+                      name="HDateC_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateK_EDT]"
+                      dataType="wstr"
+                      length="10"
+                      name="DateK_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HDateK_EDT]"
+                      dataType="wstr"
+                      length="10"
+                      name="HDateK_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HHourE_EDT]"
+                      dataType="i4"
+                      name="HHourE_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HourE_EDT]"
+                      dataType="i4"
+                      name="HourE_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HHourT_EDT]"
+                      dataType="i4"
+                      name="HHourT_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HourT_EDT]"
+                      dataType="i4"
+                      name="HourT_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HHourC_EDT]"
+                      dataType="i4"
+                      name="HHourC_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HourC_EDT]"
+                      dataType="i4"
+                      name="HourC_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HHourK_EDT]"
+                      dataType="i4"
+                      name="HHourK_EDT" />
+                    <externalMetadataColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HourK_EDT]"
+                      dataType="i4"
+                      name="HourK_EDT" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\наработка часов электродвигателей (edtime).Paths[ODBC Source Output]"
+              endId="Package\наработка часов электродвигателей (edtime)\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="ODBC Source Output"
+              startId="Package\наработка часов электродвигателей (edtime)\ODBC Source.Outputs[ODBC Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Список двигателей (ed)"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2BD66692-E454-4D4A-A1DB-6EE93DE8D5FF}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Список двигателей (ed)">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Список двигателей (ed)\ODBC Source"
+              componentClassID="Attunity.SSISODBCSrc"
+              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;6"
+              description="ODBC Source"
+              name="ODBC Source"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The name of the table to be fetched."
+                  expressionType="Notify"
+                  name="TableName">`ed`</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows fetched per batch."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines the chunk size allocation for LOB columns"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines how the component exposes CHAR columns. If False, CHAR columns are exposed as (multi-)byte strings (DT_STR), if True, CHAR columns are exposed as wide strings (DT_WSTR)"
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The code page to use when code page information is unavailable from the data source."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Int32"
+                  description="The mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The method used for fetching data."
+                  expressionType="Notify"
+                  name="FetchMethod"
+                  typeConverter="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="The ODBC C data type for binding numeric data."
+                  expressionType="Notify"
+                  name="BindNumericAs"
+                  typeConverter="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs"
+                  typeConverter="BindCharColumnsAs">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Список двигателей (ed)\ODBC Source.Connections[ODBCConnection]"
+                  connectionManagerID="Package.ConnectionManagers[EDV_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[EDV_DB]"
+                  description="The ODBC runtime connection"
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output]"
+                  errorRowDisposition="FailComponent"
+                  name="ODBC Source Output"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[ID_ED]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[ID_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[ID_ED]"
+                      name="ID_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[ID_Mark_ED]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[ID_Mark_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[ID_Mark_ED]"
+                      name="ID_Mark_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[ID_TI_ED]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[ID_TI_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[ID_TI_ED]"
+                      name="ID_TI_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[Uch_ED]"
+                      dataType="i2"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[Uch_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[Uch_ED]"
+                      name="Uch_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[SerNum_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[SerNum_ED]"
+                      length="40"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[SerNum_ED]"
+                      name="SerNum_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[PodO_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[PodO_ED]"
+                      length="40"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[PodO_ED]"
+                      name="PodO_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[PodU_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[PodU_ED]"
+                      length="40"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[PodU_ED]"
+                      name="PodU_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[Expl_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[Expl_ED]"
+                      length="2"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[Expl_ED]"
+                      name="Expl_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[Master_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[Master_ED]"
+                      length="40"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[Master_ED]"
+                      name="Master_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[Note_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[Note_ED]"
+                      length="100"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[Note_ED]"
+                      name="Note_ED" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[ID_ED]"
+                      dataType="i4"
+                      name="ID_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[ID_Mark_ED]"
+                      dataType="i4"
+                      name="ID_Mark_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[ID_TI_ED]"
+                      dataType="i4"
+                      name="ID_TI_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[Uch_ED]"
+                      dataType="i2"
+                      name="Uch_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[SerNum_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      length="40"
+                      name="SerNum_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[PodO_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      length="40"
+                      name="PodO_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[PodU_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      length="40"
+                      name="PodU_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[Expl_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      length="2"
+                      name="Expl_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[Master_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      length="40"
+                      name="Master_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[Note_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      name="Note_ED" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output]"
+                  isErrorOut="true"
+                  name="ODBC Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ID_ED]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[ID_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ID_ED]"
+                      name="ID_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ID_Mark_ED]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[ID_Mark_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ID_Mark_ED]"
+                      name="ID_Mark_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ID_TI_ED]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[ID_TI_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ID_TI_ED]"
+                      name="ID_TI_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[Uch_ED]"
+                      dataType="i2"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[Uch_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[Uch_ED]"
+                      name="Uch_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[SerNum_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[SerNum_ED]"
+                      length="40"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[SerNum_ED]"
+                      name="SerNum_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[PodO_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[PodO_ED]"
+                      length="40"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[PodO_ED]"
+                      name="PodO_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[PodU_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[PodU_ED]"
+                      length="40"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[PodU_ED]"
+                      name="PodU_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[Expl_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[Expl_ED]"
+                      length="2"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[Expl_ED]"
+                      name="Expl_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[Master_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[Master_ED]"
+                      length="40"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[Master_ED]"
+                      name="Master_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[Note_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[Note_ED]"
+                      length="100"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[Note_ED]"
+                      name="Note_ED" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Список двигателей (ed)\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[EDV_ed]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Список двигателей (ed)\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{CF95FE32-691E-4873-8643-C936701D5747}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_ED]"
+                      cachedDataType="i4"
+                      cachedName="ID_ED"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[ID_ED]" />
+                    <inputColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_Mark_ED]"
+                      cachedDataType="i4"
+                      cachedName="ID_Mark_ED"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Mark_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[ID_Mark_ED]" />
+                    <inputColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_TI_ED]"
+                      cachedDataType="i4"
+                      cachedName="ID_TI_ED"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_TI_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[ID_TI_ED]" />
+                    <inputColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Uch_ED]"
+                      cachedDataType="i2"
+                      cachedName="Uch_ED"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Uch_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[Uch_ED]" />
+                    <inputColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SerNum_ED]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="SerNum_ED"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SerNum_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[SerNum_ED]" />
+                    <inputColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PodO_ED]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="PodO_ED"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PodO_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[PodO_ED]" />
+                    <inputColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PodU_ED]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="PodU_ED"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PodU_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[PodU_ED]" />
+                    <inputColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Expl_ED]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Expl_ED"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Expl_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[Expl_ED]" />
+                    <inputColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Master_ED]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Master_ED"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Master_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[Master_ED]" />
+                    <inputColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Note_ED]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Note_ED"
+                      externalMetadataColumnId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Note_ED]"
+                      lineageId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output].Columns[Note_ED]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_ED]"
+                      dataType="i4"
+                      name="ID_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Mark_ED]"
+                      dataType="i4"
+                      name="ID_Mark_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_TI_ED]"
+                      dataType="i4"
+                      name="ID_TI_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Uch_ED]"
+                      dataType="i2"
+                      name="Uch_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SerNum_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      length="40"
+                      name="SerNum_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PodO_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      length="40"
+                      name="PodO_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PodU_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      length="40"
+                      name="PodU_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Expl_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      length="2"
+                      name="Expl_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Master_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      length="40"
+                      name="Master_ED" />
+                    <externalMetadataColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Note_ED]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      name="Note_ED" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Список двигателей (ed)\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Список двигателей (ed)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Список двигателей (ed)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Список двигателей (ed)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Список двигателей (ed).Paths[ODBC Source Output]"
+              endId="Package\Список двигателей (ed)\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="ODBC Source Output"
+              startId="Package\Список двигателей (ed)\ODBC Source.Outputs[ODBC Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3B175ECA-5C00-43C0-A9E4-10917828732E}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Список двигателей (ed)" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B0000EFF-A8A2-41FF-9E10-480BB6A8CF95}"
+      DTS:From="Package\Список двигателей (ed)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\наработка часов электродвигателей (edtime)" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Список двигателей (ed)"
+          TopLeft="146.5,127.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="155,23" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="236.5,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8,62.5"
+              Start="0,0"
+              End="8,55">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.25"
+                    Point2="0,31.25"
+                    Point3="4,31.25" />
+                  <mssgle:LineSegment
+                    End="4,31.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,31.25"
+                    Point2="8,31.25"
+                    Point3="8,35.25" />
+                  <mssgle:LineSegment
+                    End="8,55" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="302,42"
+          Id="Package\наработка часов электродвигателей (edtime)"
+          TopLeft="147,248" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="244.5,169.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.5,78.5"
+              Start="0,0"
+              End="53.5,71">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.25"
+                    Point2="0,39.25"
+                    Point3="4,39.25" />
+                  <mssgle:LineSegment
+                    End="49.5,39.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.5,39.25"
+                    Point2="53.5,39.25"
+                    Point3="53.5,43.25" />
+                  <mssgle:LineSegment
+                    End="53.5,71" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Список двигателей (ed)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Список двигателей (ed)\ODBC Source"
+          TopLeft="180,114" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Список двигателей (ed)\OLE DB Destination"
+          TopLeft="176,250" />
+        <EdgeLayout
+          Id="Package\Список двигателей (ed).Paths[ODBC Source Output]"
+          TopLeft="251,156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.5,94"
+              Start="0,0"
+              End="10.5,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43"
+                    Point2="0,47"
+                    Point3="4,47" />
+                  <mssgle:LineSegment
+                    End="6.5,47" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.5,47"
+                    Point2="10.5,47"
+                    Point3="10.5,51" />
+                  <mssgle:LineSegment
+                    End="10.5,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Список двигателей (ed)\ODBC Source">
+    <Properties>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Список двигателей (ed)\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\наработка часов электродвигателей (edtime)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="142,42"
+          Id="Package\наработка часов электродвигателей (edtime)\ODBC Source"
+          TopLeft="301,139" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\наработка часов электродвигателей (edtime)\OLE DB Destination"
+          TopLeft="289,231" />
+        <EdgeLayout
+          Id="Package\наработка часов электродвигателей (edtime).Paths[ODBC Source Output]"
+          TopLeft="373.25,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\наработка часов электродвигателей (edtime)\ODBC Source">
+    <Properties>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\наработка часов электродвигателей (edtime)\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

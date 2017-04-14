@@ -1,4 +1,5 @@
-﻿using Naftan.Infrastructure.Domain;
+﻿using Naftan.CMMS.Domain.RepairObjects;
+using Naftan.Infrastructure.Domain;
 
 namespace Naftan.CMMS.Domain.Specifications
 {

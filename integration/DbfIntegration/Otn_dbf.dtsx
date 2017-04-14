@@ -11,12 +11,1588 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="Otn_dbf"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{59506D69-2360-49CF-A268-679327E8FAAF}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{C30D5E54-913D-45D2-8217-F3BCDEB87B01}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\(CE401pl)"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{961BAED0-A1EC-4F45-A508-E6C18D64CCE2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="(CE401pl)"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\(CE401pl)\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DBF_CE401pl]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\(CE401pl)\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{CF95FE32-691E-4873-8643-C936701D5747}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[god]"
+                      cachedDataType="numeric"
+                      cachedName="god"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[god]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[god]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nm]"
+                      cachedDataType="numeric"
+                      cachedName="nm"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nm]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nm]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[km]"
+                      cachedDataType="numeric"
+                      cachedName="km"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[km]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[km]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kvo]"
+                      cachedDataType="numeric"
+                      cachedName="kvo"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kvo]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kvo]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kc]"
+                      cachedDataType="numeric"
+                      cachedName="kc"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kc]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kc]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ku]"
+                      cachedDataType="numeric"
+                      cachedName="ku"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ku]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ku]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ti]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ti"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ti]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ti]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kmrk]"
+                      cachedDataType="numeric"
+                      cachedName="kmrk"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kmrk]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kmrk]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[is]"
+                      cachedDataType="numeric"
+                      cachedName="is"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[is]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[is]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[mrk]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="mrk"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mrk]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[mrk]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ktu]"
+                      cachedDataType="numeric"
+                      cachedName="ktu"
+                      cachedPrecision="1"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ktu]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ktu]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tkar]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="tkar"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tkar]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[tkar]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[rsht]"
+                      cachedDataType="numeric"
+                      cachedName="rsht"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rsht]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[rsht]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ps]"
+                      cachedDataType="numeric"
+                      cachedName="ps"
+                      cachedPrecision="1"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ps]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ps]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dpo]"
+                      cachedDataType="numeric"
+                      cachedName="dpo"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dpo]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[dpo]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dpt]"
+                      cachedDataType="numeric"
+                      cachedName="dpt"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dpt]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[dpt]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dps]"
+                      cachedDataType="numeric"
+                      cachedName="dps"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dps]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[dps]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dpk]"
+                      cachedDataType="numeric"
+                      cachedName="dpk"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dpk]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[dpk]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[vpr]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="vpr"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vpr]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vpr]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[narn]"
+                      cachedDataType="numeric"
+                      cachedName="narn"
+                      cachedPrecision="7"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[narn]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[narn]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kfo]"
+                      cachedDataType="numeric"
+                      cachedName="kfo"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kfo]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfo]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[omax]"
+                      cachedDataType="numeric"
+                      cachedName="omax"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[omax]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[omax]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[omin]"
+                      cachedDataType="numeric"
+                      cachedName="omin"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[omin]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[omin]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kft]"
+                      cachedDataType="numeric"
+                      cachedName="kft"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kft]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kft]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tmax]"
+                      cachedDataType="numeric"
+                      cachedName="tmax"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tmax]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[tmax]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tmin]"
+                      cachedDataType="numeric"
+                      cachedName="tmin"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tmin]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[tmin]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kfs]"
+                      cachedDataType="numeric"
+                      cachedName="kfs"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kfs]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfs]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[smax]"
+                      cachedDataType="numeric"
+                      cachedName="smax"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[smax]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[smax]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[smin]"
+                      cachedDataType="numeric"
+                      cachedName="smin"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[smin]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[smin]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kfk]"
+                      cachedDataType="numeric"
+                      cachedName="kfk"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kfk]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfk]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kmax]"
+                      cachedDataType="numeric"
+                      cachedName="kmax"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kmax]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kmax]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kmin]"
+                      cachedDataType="numeric"
+                      cachedName="kmin"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kmin]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kmin]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[vr]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="vr"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vr]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vr]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[norm]"
+                      cachedDataType="numeric"
+                      cachedName="norm"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[norm]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[norm]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[npo]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="npo"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[npo]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[npo]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[npu]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="npu"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[npu]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[npu]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[narnp]"
+                      cachedDataType="numeric"
+                      cachedName="narnp"
+                      cachedPrecision="7"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[narnp]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[narnp]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[narmp]"
+                      cachedDataType="numeric"
+                      cachedName="narmp"
+                      cachedPrecision="7"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[narmp]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[narmp]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[pr]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="pr"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pr]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[pr]" />
+                    <inputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[plan]"
+                      cachedDataType="bool"
+                      cachedName="plan"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[plan]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[plan]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[god]"
+                      dataType="numeric"
+                      name="god"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nm]"
+                      dataType="numeric"
+                      name="nm"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[km]"
+                      dataType="numeric"
+                      name="km"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kvo]"
+                      dataType="numeric"
+                      name="kvo"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kc]"
+                      dataType="numeric"
+                      name="kc"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ku]"
+                      dataType="numeric"
+                      name="ku"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ti]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="ti" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kmrk]"
+                      dataType="numeric"
+                      name="kmrk"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[is]"
+                      dataType="numeric"
+                      name="is"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mrk]"
+                      codePage="1251"
+                      dataType="str"
+                      length="17"
+                      name="mrk" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ktu]"
+                      dataType="numeric"
+                      name="ktu"
+                      precision="1" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tkar]"
+                      codePage="1251"
+                      dataType="str"
+                      length="7"
+                      name="tkar" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rsht]"
+                      dataType="numeric"
+                      name="rsht"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ps]"
+                      dataType="numeric"
+                      name="ps"
+                      precision="1" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dpo]"
+                      dataType="numeric"
+                      name="dpo"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dpt]"
+                      dataType="numeric"
+                      name="dpt"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dps]"
+                      dataType="numeric"
+                      name="dps"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dpk]"
+                      dataType="numeric"
+                      name="dpk"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vpr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="vpr" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[narn]"
+                      dataType="numeric"
+                      name="narn"
+                      precision="7" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kfo]"
+                      dataType="numeric"
+                      name="kfo"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[omax]"
+                      dataType="numeric"
+                      name="omax"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[omin]"
+                      dataType="numeric"
+                      name="omin"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kft]"
+                      dataType="numeric"
+                      name="kft"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tmax]"
+                      dataType="numeric"
+                      name="tmax"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tmin]"
+                      dataType="numeric"
+                      name="tmin"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kfs]"
+                      dataType="numeric"
+                      name="kfs"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[smax]"
+                      dataType="numeric"
+                      name="smax"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[smin]"
+                      dataType="numeric"
+                      name="smin"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kfk]"
+                      dataType="numeric"
+                      name="kfk"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kmax]"
+                      dataType="numeric"
+                      name="kmax"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kmin]"
+                      dataType="numeric"
+                      name="kmin"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="vr" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[norm]"
+                      dataType="numeric"
+                      name="norm"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[npo]"
+                      codePage="1251"
+                      dataType="str"
+                      length="5"
+                      name="npo" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[npu]"
+                      codePage="1251"
+                      dataType="str"
+                      length="5"
+                      name="npu" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[narnp]"
+                      dataType="numeric"
+                      name="narnp"
+                      precision="7" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[narmp]"
+                      dataType="numeric"
+                      name="narmp"
+                      precision="7" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="pr" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[plan]"
+                      dataType="bool"
+                      name="plan" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\(CE401pl)\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\(CE401pl)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\(CE401pl)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\(CE401pl)\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">ce401pl</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\(CE401pl)\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{241771BC-02B7-4491-8B4A-D238E0D53411}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBF]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[god]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[god]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[god]"
+                      name="god"
+                      precision="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nm]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nm]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nm]"
+                      name="nm"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[km]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[km]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[km]"
+                      name="km"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kvo]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kvo]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kvo]"
+                      name="kvo"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kc]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kc]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kc]"
+                      name="kc"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ku]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ku]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ku]"
+                      name="ku"
+                      precision="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ti]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ti]"
+                      length="10"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ti]"
+                      name="ti"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kmrk]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kmrk]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kmrk]"
+                      name="kmrk"
+                      precision="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[is]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[is]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[is]"
+                      name="is"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[mrk]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mrk]"
+                      length="17"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[mrk]"
+                      name="mrk"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ktu]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ktu]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ktu]"
+                      name="ktu"
+                      precision="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[tkar]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tkar]"
+                      length="7"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[tkar]"
+                      name="tkar"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[rsht]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rsht]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[rsht]"
+                      name="rsht"
+                      precision="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ps]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ps]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ps]"
+                      name="ps"
+                      precision="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[dpo]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dpo]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[dpo]"
+                      name="dpo"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[dpt]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dpt]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[dpt]"
+                      name="dpt"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[dps]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dps]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[dps]"
+                      name="dps"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[dpk]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dpk]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[dpk]"
+                      name="dpk"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vpr]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[vpr]"
+                      length="1"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vpr]"
+                      name="vpr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[narn]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[narn]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[narn]"
+                      name="narn"
+                      precision="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfo]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kfo]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfo]"
+                      name="kfo"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[omax]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[omax]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[omax]"
+                      name="omax"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[omin]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[omin]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[omin]"
+                      name="omin"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kft]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kft]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kft]"
+                      name="kft"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[tmax]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tmax]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[tmax]"
+                      name="tmax"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[tmin]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tmin]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[tmin]"
+                      name="tmin"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfs]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kfs]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfs]"
+                      name="kfs"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[smax]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[smax]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[smax]"
+                      name="smax"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[smin]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[smin]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[smin]"
+                      name="smin"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfk]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kfk]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kfk]"
+                      name="kfk"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kmax]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kmax]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kmax]"
+                      name="kmax"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kmin]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kmin]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kmin]"
+                      name="kmin"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vr]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[vr]"
+                      length="1"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vr]"
+                      name="vr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[norm]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[norm]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[norm]"
+                      name="norm"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[npo]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[npo]"
+                      length="5"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[npo]"
+                      name="npo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[npu]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[npu]"
+                      length="5"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[npu]"
+                      name="npu"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[narnp]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[narnp]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[narnp]"
+                      name="narnp"
+                      precision="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[narmp]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[narmp]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[narmp]"
+                      name="narmp"
+                      precision="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[pr]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pr]"
+                      length="1"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[pr]"
+                      name="pr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[plan]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[plan]"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].Columns[plan]"
+                      name="plan"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[god]"
+                      dataType="numeric"
+                      name="god"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nm]"
+                      dataType="numeric"
+                      name="nm"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[km]"
+                      dataType="numeric"
+                      name="km"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kvo]"
+                      dataType="numeric"
+                      name="kvo"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kc]"
+                      dataType="numeric"
+                      name="kc"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ku]"
+                      dataType="numeric"
+                      name="ku"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ti]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="ti" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kmrk]"
+                      dataType="numeric"
+                      name="kmrk"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[is]"
+                      dataType="numeric"
+                      name="is"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mrk]"
+                      codePage="1251"
+                      dataType="str"
+                      length="17"
+                      name="mrk" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ktu]"
+                      dataType="numeric"
+                      name="ktu"
+                      precision="1" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tkar]"
+                      codePage="1251"
+                      dataType="str"
+                      length="7"
+                      name="tkar" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rsht]"
+                      dataType="numeric"
+                      name="rsht"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ps]"
+                      dataType="numeric"
+                      name="ps"
+                      precision="1" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dpo]"
+                      dataType="numeric"
+                      name="dpo"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dpt]"
+                      dataType="numeric"
+                      name="dpt"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dps]"
+                      dataType="numeric"
+                      name="dps"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dpk]"
+                      dataType="numeric"
+                      name="dpk"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[vpr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="vpr" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[narn]"
+                      dataType="numeric"
+                      name="narn"
+                      precision="7" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kfo]"
+                      dataType="numeric"
+                      name="kfo"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[omax]"
+                      dataType="numeric"
+                      name="omax"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[omin]"
+                      dataType="numeric"
+                      name="omin"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kft]"
+                      dataType="numeric"
+                      name="kft"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tmax]"
+                      dataType="numeric"
+                      name="tmax"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tmin]"
+                      dataType="numeric"
+                      name="tmin"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kfs]"
+                      dataType="numeric"
+                      name="kfs"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[smax]"
+                      dataType="numeric"
+                      name="smax"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[smin]"
+                      dataType="numeric"
+                      name="smin"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kfk]"
+                      dataType="numeric"
+                      name="kfk"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kmax]"
+                      dataType="numeric"
+                      name="kmax"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kmin]"
+                      dataType="numeric"
+                      name="kmin"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[vr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="vr" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[norm]"
+                      dataType="numeric"
+                      name="norm"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[npo]"
+                      codePage="1251"
+                      dataType="str"
+                      length="5"
+                      name="npo" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[npu]"
+                      codePage="1251"
+                      dataType="str"
+                      length="5"
+                      name="npu" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[narnp]"
+                      dataType="numeric"
+                      name="narnp"
+                      precision="7" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[narmp]"
+                      dataType="numeric"
+                      name="narmp"
+                      precision="7" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="pr" />
+                    <externalMetadataColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[plan]"
+                      dataType="bool"
+                      name="plan" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[god]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[god]"
+                      name="god"
+                      precision="4" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nm]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nm]"
+                      name="nm"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[km]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[km]"
+                      name="km"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kvo]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kvo]"
+                      name="kvo"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kc]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kc]"
+                      name="kc"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ku]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ku]"
+                      name="ku"
+                      precision="4" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ti]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ti]"
+                      name="ti" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kmrk]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kmrk]"
+                      name="kmrk"
+                      precision="5" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[is]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[is]"
+                      name="is"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mrk]"
+                      codePage="1251"
+                      dataType="str"
+                      length="17"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mrk]"
+                      name="mrk" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ktu]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ktu]"
+                      name="ktu"
+                      precision="1" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tkar]"
+                      codePage="1251"
+                      dataType="str"
+                      length="7"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tkar]"
+                      name="tkar" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rsht]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rsht]"
+                      name="rsht"
+                      precision="4" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ps]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ps]"
+                      name="ps"
+                      precision="1" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dpo]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dpo]"
+                      name="dpo"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dpt]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dpt]"
+                      name="dpt"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dps]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dps]"
+                      name="dps"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dpk]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dpk]"
+                      name="dpk"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[vpr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[vpr]"
+                      name="vpr" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[narn]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[narn]"
+                      name="narn"
+                      precision="7" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kfo]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kfo]"
+                      name="kfo"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[omax]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[omax]"
+                      name="omax"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[omin]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[omin]"
+                      name="omin"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kft]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kft]"
+                      name="kft"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tmax]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tmax]"
+                      name="tmax"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tmin]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tmin]"
+                      name="tmin"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kfs]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kfs]"
+                      name="kfs"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[smax]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[smax]"
+                      name="smax"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[smin]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[smin]"
+                      name="smin"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kfk]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kfk]"
+                      name="kfk"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kmax]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kmax]"
+                      name="kmax"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kmin]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kmin]"
+                      name="kmin"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[vr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[vr]"
+                      name="vr" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[norm]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[norm]"
+                      name="norm"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[npo]"
+                      codePage="1251"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[npo]"
+                      name="npo" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[npu]"
+                      codePage="1251"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[npu]"
+                      name="npu" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[narnp]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[narnp]"
+                      name="narnp"
+                      precision="7" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[narmp]"
+                      dataType="numeric"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[narmp]"
+                      name="narmp"
+                      precision="7" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pr]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pr]"
+                      name="pr" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[plan]"
+                      dataType="bool"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[plan]"
+                      name="plan" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\(CE401pl).Paths[OLE DB Source Output]"
+              endId="Package\(CE401pl)\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\(CE401pl)\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Журнал наработки оборудования (CE8)"
       DTS:CreationName="Microsoft.Pipeline"
@@ -919,6 +2495,720 @@
               endId="Package\Журнал наработки оборудования (CE8)\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Журнал наработки оборудования (CE8)\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Замена Оборудования (CK410b)"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3E137C1B-70F1-41DB-B26B-868F278AEEBC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Замена Оборудования (CK410b)"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Замена Оборудования (CK410b)\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DBF_CK410b]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{CF95FE32-691E-4873-8643-C936701D5747}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[god]"
+                      cachedDataType="numeric"
+                      cachedName="god"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[god]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[god]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nm]"
+                      cachedDataType="numeric"
+                      cachedName="nm"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nm]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nm]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[data]"
+                      cachedDataType="dbDate"
+                      cachedName="data"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[data]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[data]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kvo]"
+                      cachedDataType="numeric"
+                      cachedName="kvo"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kvo]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kvo]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kc]"
+                      cachedDataType="numeric"
+                      cachedName="kc"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kc]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kc]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ku]"
+                      cachedDataType="numeric"
+                      cachedName="ku"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ku]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ku]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ti_s]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ti_s"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ti_s]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ti_s]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[mrk_s]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="mrk_s"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mrk_s]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[mrk_s]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ti_n]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ti_n"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ti_n]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ti_n]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[mrk_n]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="mrk_n"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mrk_n]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[mrk_n]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[vid]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="vid"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vid]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vid]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nc]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="nc"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nc]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nc]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nu]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="nu"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nu]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nu]" />
+                    <inputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nvo]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="26"
+                      cachedName="nvo"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nvo]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nvo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[god]"
+                      dataType="numeric"
+                      name="god"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nm]"
+                      dataType="numeric"
+                      name="nm"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[data]"
+                      dataType="wstr"
+                      length="10"
+                      name="data" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kvo]"
+                      dataType="numeric"
+                      name="kvo"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kc]"
+                      dataType="numeric"
+                      name="kc"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ku]"
+                      dataType="numeric"
+                      name="ku"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ti_s]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="ti_s" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mrk_s]"
+                      codePage="1251"
+                      dataType="str"
+                      length="17"
+                      name="mrk_s" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ti_n]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="ti_n" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mrk_n]"
+                      codePage="1251"
+                      dataType="str"
+                      length="17"
+                      name="mrk_n" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vid]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="vid" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nc]"
+                      codePage="1251"
+                      dataType="str"
+                      length="11"
+                      name="nc" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nu]"
+                      codePage="1251"
+                      dataType="str"
+                      length="25"
+                      name="nu" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nvo]"
+                      codePage="1251"
+                      dataType="str"
+                      length="26"
+                      name="nvo" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Замена Оборудования (CK410b)\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">ck410b</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{241771BC-02B7-4491-8B4A-D238E0D53411}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBF]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[god]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[god]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[god]"
+                      name="god"
+                      precision="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nm]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nm]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nm]"
+                      name="nm"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[data]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[data]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[data]"
+                      name="data"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kvo]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kvo]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kvo]"
+                      name="kvo"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kc]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kc]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[kc]"
+                      name="kc"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ku]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ku]"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ku]"
+                      name="ku"
+                      precision="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ti_s]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ti_s]"
+                      length="10"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ti_s]"
+                      name="ti_s"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[mrk_s]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mrk_s]"
+                      length="17"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[mrk_s]"
+                      name="mrk_s"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ti_n]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ti_n]"
+                      length="10"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ti_n]"
+                      name="ti_n"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[mrk_n]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mrk_n]"
+                      length="17"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[mrk_n]"
+                      name="mrk_n"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vid]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[vid]"
+                      length="1"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[vid]"
+                      name="vid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nc]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nc]"
+                      length="11"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nc]"
+                      name="nc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nu]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nu]"
+                      length="25"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nu]"
+                      name="nu"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nvo]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nvo]"
+                      length="26"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].Columns[nvo]"
+                      name="nvo"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[god]"
+                      dataType="numeric"
+                      name="god"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nm]"
+                      dataType="numeric"
+                      name="nm"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[data]"
+                      dataType="dbDate"
+                      name="data" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kvo]"
+                      dataType="numeric"
+                      name="kvo"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kc]"
+                      dataType="numeric"
+                      name="kc"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ku]"
+                      dataType="numeric"
+                      name="ku"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ti_s]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="ti_s" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mrk_s]"
+                      codePage="1251"
+                      dataType="str"
+                      length="17"
+                      name="mrk_s" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ti_n]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="ti_n" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mrk_n]"
+                      codePage="1251"
+                      dataType="str"
+                      length="17"
+                      name="mrk_n" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[vid]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      name="vid" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nc]"
+                      codePage="1251"
+                      dataType="str"
+                      length="11"
+                      name="nc" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nu]"
+                      codePage="1251"
+                      dataType="str"
+                      length="25"
+                      name="nu" />
+                    <externalMetadataColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nvo]"
+                      codePage="1251"
+                      dataType="str"
+                      length="26"
+                      name="nvo" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[god]"
+                      dataType="numeric"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[god]"
+                      name="god"
+                      precision="4" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nm]"
+                      dataType="numeric"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nm]"
+                      name="nm"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[data]"
+                      dataType="dbDate"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[data]"
+                      name="data" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kvo]"
+                      dataType="numeric"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kvo]"
+                      name="kvo"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kc]"
+                      dataType="numeric"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kc]"
+                      name="kc"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ku]"
+                      dataType="numeric"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ku]"
+                      name="ku"
+                      precision="4" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ti_s]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ti_s]"
+                      name="ti_s" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mrk_s]"
+                      codePage="1251"
+                      dataType="str"
+                      length="17"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mrk_s]"
+                      name="mrk_s" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ti_n]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ti_n]"
+                      name="ti_n" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mrk_n]"
+                      codePage="1251"
+                      dataType="str"
+                      length="17"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mrk_n]"
+                      name="mrk_n" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[vid]"
+                      codePage="1251"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[vid]"
+                      name="vid" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nc]"
+                      codePage="1251"
+                      dataType="str"
+                      length="11"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nc]"
+                      name="nc" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nu]"
+                      codePage="1251"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nu]"
+                      name="nu" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nvo]"
+                      codePage="1251"
+                      dataType="str"
+                      length="26"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nvo]"
+                      name="nvo" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Замена Оборудования (CK410b).Paths[OLE DB Source Output]"
+              endId="Package\Замена Оборудования (CK410b)\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Замена Оборудования (CK410b)\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -9627,7 +11917,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{CF95FE32-691E-4873-8643-C936701D5747}"
-          SQLTask:SqlStatementSource="DELETE FROM dbf_CY00&#xA;DELETE FROM dbf_CY02&#xA;DELETE FROM dbf_CY03&#xA;DELETE FROM dbf_CY04&#xA;DELETE FROM dbf_CY05&#xA;DELETE FROM dbf_CY06&#xA;DELETE FROM dbf_CY07&#xA;DELETE FROM dbf_CY08&#xA;DELETE FROM dbf_CY09&#xA;DELETE FROM dbf_CY15&#xA;DELETE FROM dbf_CY17&#xA;DELETE FROM dbf_CY18&#xA;DELETE FROM dbf_CY27&#xA;DELETE FROM dbf_CY28&#xA;DELETE FROM dbf_CE8" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table dbf_CY00&#xA;truncate table dbf_CY02&#xA;truncate table dbf_CY03&#xA;truncate table dbf_CY04&#xA;truncate table dbf_CY05&#xA;truncate table dbf_CY06&#xA;truncate table dbf_CY07&#xA;truncate table dbf_CY08&#xA;truncate table dbf_CY09&#xA;truncate table dbf_CY15&#xA;truncate table dbf_CY17&#xA;truncate table dbf_CY18&#xA;truncate table dbf_CY27&#xA;truncate table dbf_CY28&#xA;truncate table dbf_CE8" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -9688,6 +11978,22 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 14"
       DTS:To="Package\Журнал наработки оборудования (CE8)" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 15]"
+      DTS:CreationName=""
+      DTS:DTSID="{196C0B9E-1C11-4023-917E-E719C0E40EEE}"
+      DTS:From="Package\Журнал наработки оборудования (CE8)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 15"
+      DTS:To="Package\Замена Оборудования (CK410b)" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 16]"
+      DTS:CreationName=""
+      DTS:DTSID="{861D0B49-F1BA-490F-AA9A-A21752B80A7D}"
+      DTS:From="Package\Замена Оборудования (CK410b)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 16"
+      DTS:To="Package\(CE401pl)" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -9764,7 +12070,19 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="125,42"
+          Id="Package\(CE401pl)"
+          TopLeft="510,369" />
+        <NodeLayout
+          Size="274,42"
+          Id="Package\Журнал наработки оборудования (CE8)"
+          TopLeft="507,196" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Замена Оборудования (CK410b)"
+          TopLeft="510,287" />
         <NodeLayout
           Size="313,42"
           Id="Package\Импорт  пользовательские справочники (CY08)"
@@ -10006,6 +12324,96 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 14]"
+          TopLeft="643,154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 15]"
+          TopLeft="644,238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16,49"
+              Start="0,0"
+              End="-16,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="-4,24.5" />
+                  <mssgle:LineSegment
+                    End="-12,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12,24.5"
+                    Point2="-16,24.5"
+                    Point3="-16,28.5" />
+                  <mssgle:LineSegment
+                    End="-16,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 16]"
+          TopLeft="628,329">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-55.5,40"
+              Start="0,0"
+              End="-55.5,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="-4,20" />
+                  <mssgle:LineSegment
+                    End="-51.5,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51.5,20"
+                    Point2="-55.5,20"
+                    Point3="-55.5,24" />
+                  <mssgle:LineSegment
+                    End="-55.5,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="211,220">
           <EdgeLayout.Curve>
@@ -10217,24 +12625,48 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\(CE401pl)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="274,42"
-          Id="Package\Журнал наработки оборудования (CE8)"
-          TopLeft="507,196" />
+          Size="171,42"
+          Id="Package\(CE401pl)\OLE DB Destination"
+          TopLeft="201,120" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\(CE401pl)\OLE DB Source"
+          TopLeft="194,10" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="643,154">
+          Id="Package\(CE401pl).Paths[OLE DB Source Output]"
+          TopLeft="269,52">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="17.5,68"
               Start="0,0"
-              End="0,34.5">
+              End="17.5,60.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="4,34" />
+                  <mssgle:LineSegment
+                    End="13.5,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.5,34"
+                    Point2="17.5,34"
+                    Point3="17.5,38" />
+                  <mssgle:LineSegment
+                    End="17.5,60.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10245,7 +12677,185 @@
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
-  </Package>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\(CE401pl)\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\(CE401pl)\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Журнал наработки оборудования (CE8)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Журнал наработки оборудования (CE8)\OLE DB Source"
+          TopLeft="376,163" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Журнал наработки оборудования (CE8)\OLE DB Destination"
+          TopLeft="375,270" />
+        <EdgeLayout
+          Id="Package\Журнал наработки оборудования (CE8).Paths[OLE DB Source Output]"
+          TopLeft="451,205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.5,65"
+              Start="0,0"
+              End="9.5,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
+                  <mssgle:LineSegment
+                    End="5.5,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.5,32.5"
+                    Point2="9.5,32.5"
+                    Point3="9.5,36.5" />
+                  <mssgle:LineSegment
+                    End="9.5,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Журнал наработки оборудования (CE8)\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Журнал наработки оборудования (CE8)\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Замена Оборудования (CK410b)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Замена Оборудования (CK410b)\OLE DB Source"
+          TopLeft="260,184" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Замена Оборудования (CK410b)\OLE DB Destination"
+          TopLeft="270,292" />
+        <EdgeLayout
+          Id="Package\Замена Оборудования (CK410b).Paths[OLE DB Source Output]"
+          TopLeft="335,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.5,66"
+              Start="0,0"
+              End="20.5,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="4,33" />
+                  <mssgle:LineSegment
+                    End="16.5,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.5,33"
+                    Point2="20.5,33"
+                    Point3="20.5,37" />
+                  <mssgle:LineSegment
+                    End="20.5,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Замена Оборудования (CK410b)\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Замена Оборудования (CK410b)\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Импорт  пользовательские справочники (CY08)">
     <LayoutInfo>
@@ -11201,82 +13811,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Импорт Цеха и Производства, Установки (CY02)\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Журнал наработки оборудования (CE8)">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Журнал наработки оборудования (CE8)\OLE DB Source"
-          TopLeft="376,163" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Журнал наработки оборудования (CE8)\OLE DB Destination"
-          TopLeft="375,270" />
-        <EdgeLayout
-          Id="Package\Журнал наработки оборудования (CE8).Paths[OLE DB Source Output]"
-          TopLeft="451,205">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.5,65"
-              Start="0,0"
-              End="9.5,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5"
-                    Point2="0,32.5"
-                    Point3="4,32.5" />
-                  <mssgle:LineSegment
-                    End="5.5,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.5,32.5"
-                    Point2="9.5,32.5"
-                    Point3="9.5,36.5" />
-                  <mssgle:LineSegment
-                    End="9.5,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Журнал наработки оборудования (CE8)\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Журнал наработки оборудования (CE8)\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

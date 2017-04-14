@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{56B6296A-56D8-49B5-A179-DD6869E57E2A}</ProjectGuid>
+    <ProjectGuid>{8DB3B10C-CD92-4806-8226-3C75DEA1ECFF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Naftan.CMMS.Domain</RootNamespace>
-    <AssemblyName>Naftan.CMMS.Domain</AssemblyName>
+    <RootNamespace>Naftan.CMMS.NHibernate</RootNamespace>
+    <AssemblyName>Naftan.CMMS.NHibernate</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Naftan.Infrastructure.Domain, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Naftan.Infrastructure.Domain.0.1.2\lib\net40\Naftan.Infrastructure.Domain.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,37 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Maintenance\MaintenanceIntervalType.cs" />
-    <Compile Include="Maintenance\MaintenancePlanDetails.cs" />
-    <Compile Include="Maintenance\UnplannedMaintenanceReason.cs" />
-    <Compile Include="Usage\UsageActual.cs" />
-    <Compile Include="Usage\UsagePlanned.cs" />
-    <Compile Include="Usage\UsageSummary.cs" />
-    <Compile Include="RepairObjects\Department.cs" />
-    <Compile Include="RepairObjects\Environment.cs" />
-    <Compile Include="Maintenance\MaintenanceActual.cs" />
-    <Compile Include="RepairObjects\Manufacturer.cs" />
-    <Compile Include="RepairObjects\OperatingState.cs" />
-    <Compile Include="RepairObjects\Plant.cs" />
-    <Compile Include="RepairObjects\ObjectOperatingState.cs" />
-    <Compile Include="Maintenance\MaintenancePlan.cs" />
-    <Compile Include="UserReferences\Reference.cs" />
-    <Compile Include="UserReferences\ReferenceValue.cs" />
-    <Compile Include="Specifications\Specification.cs" />
-    <Compile Include="Specifications\SpecificationType.cs" />
-    <Compile Include="Specifications\GroupSpecification.cs" />
-    <Compile Include="Maintenance\MaintenanceInterval.cs" />
-    <Compile Include="Maintenance\MaintenanceType.cs" />
-    <Compile Include="MeasureUnit.cs" />
-    <Compile Include="Specifications\ObjectSpecification.cs" />
+    <Compile Include="NHibernateInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepairObjects\RepairObject.cs" />
-    <Compile Include="RepairObjects\RepairObjectGroup.cs" />
-    <Compile Include="Test.cs" />
-    <Compile Include="TimePeriod.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

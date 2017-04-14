@@ -1,4 +1,7 @@
-﻿using Naftan.CMMS.Domain.UserReferences;
+﻿using System;
+using System.Linq;
+using Naftan.CMMS.Domain.RepairObjects;
+using Naftan.CMMS.Domain.UserReferences;
 using Naftan.CMMS.Domain.Specifications;
 
 namespace Naftan.CMMS.Domain
@@ -16,9 +19,9 @@ namespace Naftan.CMMS.Domain
             eMotorType.AddChild(eMotorModel);
 
 
-            var execution = new Reference{Name = "Исполнение"};
-            execution.AddValue(new ReferenceValue { Value = "Открытое" });
-            execution.AddValue(new ReferenceValue { Value = "Закрытое" });
+            var execution = new Reference {Name = "Вид исполнения"};
+            execution.AddValue(new ReferenceValue {Value = "Открытое"});
+            execution.AddValue(new ReferenceValue {Value = "Закрытое"});
 
 
             var powerSpec = new Specification
@@ -35,15 +38,16 @@ namespace Naftan.CMMS.Domain
             };
             var executionSpec = new Specification
             {
+                Id = 23,
                 Name = "Исполнение",
                 Type = SpecificationType.Reference,
                 Reference = execution
             };
 
-            eMotors.AddSpecification(new GroupSpecification(rpmSpec));
+            eMotors.AddSpecification(new GroupSpecification(powerSpec));
             eMotors.AddSpecification(new GroupSpecification(rpmSpec));
 
-            var eMotor = new RepairObject(eMotorModel)
+            var eMotor = new RepairObject(eMotorModel, DateTime.Now)
             {
                 FactoryNumber = "3452",
                 InventoryNumber = "123456678",
@@ -53,7 +57,7 @@ namespace Naftan.CMMS.Domain
             eMotor.AddSpecification(new ObjectSpecification
             {
                 Specification = executionSpec,
-                Value = executionSpec.Id.ToString()
+                Value = executionSpec.Reference.Values.First().Id.ToString()
             });
 
 
