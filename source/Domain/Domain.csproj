@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Naftan.Infrastructure.Domain, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Naftan.Infrastructure.Domain.0.1.2\lib\net40\Naftan.Infrastructure.Domain.dll</HintPath>
+    <Reference Include="Naftan.Infrastructure.Domain, Version=0.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Naftan.Infrastructure.Domain.0.1.4\lib\net40\Naftan.Infrastructure.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -43,12 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICommandFactory.cs" />
+    <Compile Include="Impl\CommandFactory.cs" />
+    <Compile Include="IQueryFactory.cs" />
     <Compile Include="Maintenance\MaintenanceIntervalType.cs" />
+    <Compile Include="Maintenance\LastMaintenance.cs" />
     <Compile Include="Maintenance\MaintenancePlanDetails.cs" />
     <Compile Include="Maintenance\UnplannedMaintenanceReason.cs" />
     <Compile Include="Usage\UsageActual.cs" />
     <Compile Include="Usage\UsagePlanned.cs" />
-    <Compile Include="Usage\UsageSummary.cs" />
     <Compile Include="RepairObjects\Department.cs" />
     <Compile Include="RepairObjects\Environment.cs" />
     <Compile Include="Maintenance\MaintenanceActual.cs" />

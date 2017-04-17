@@ -63,7 +63,6 @@ namespace Naftan.CMMS.Domain.RepairObjects
         /// Дата ввода в эксплуатацию
         /// </summary>
         public DateTime StartOperating { get; private set; }
-
         
         #region Рабочее состояние
 
@@ -130,50 +129,10 @@ namespace Naftan.CMMS.Domain.RepairObjects
 
         #endregion
 
-        #region Наработка
-
         /// <summary>
         /// Наработка с начала экслуатации
         /// </summary>
-        public int UsageFromStartup { get; private set; }
-
-        /// <summary>
-        /// Добавить наработку
-        /// </summary>
-        /// <param name="start">Дата с</param>
-        /// <param name="end">Дата по</param>
-        /// <param name="usage">Наработка</param>
-        public void AddUsage(DateTime start, DateTime end, int usage)
-        {
-            //Добавить запись в журнал наработки
-            //Добавить наработку в суммарную наработку 
-            
-
-            //Добавить наработку с начала эксплуатации
-            UsageFromStartup += usage;
-        }
-
-        #endregion
-
-        #region Планирование ремонтных работ
-
-        public void PlanMaintenance(Period period)
-        {
-            //Посмотреть межремонтные интервалы
-            //Если подходит ремонт, то добавить запись в график ППР
-        }
-
-        #endregion
-
-        #region Ремонтные работы
-
-        public void AddMaintenance(MaintenanceType type, DateTime start, DateTime? end = null, UnplannedMaintenanceReason unplannedReason = null)
-        {
-            //Добавить запись в журнал обслуживания
-            //
-        }
-
-        #endregion
+        public int UsageFromStartup { get; internal set; }
         
     }
 }

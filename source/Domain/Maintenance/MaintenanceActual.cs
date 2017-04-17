@@ -15,5 +15,7 @@ namespace Naftan.CMMS.Domain.Maintenance
         public DateTime Start { get; set; }
         public DateTime? End { get; set; }
         public UnplannedMaintenanceReason UnplannedReason { get; set; }
+
+        public bool IsFinalized() => End != null;
     }
 }

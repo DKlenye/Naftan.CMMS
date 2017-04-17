@@ -3,7 +3,7 @@
 namespace Naftan.CMMS.Domain.Maintenance
 {
     /// <summary>
-    /// Причина внепланового ремонта
+    /// Причина внепланового обслуживания
     /// </summary>
     public class UnplannedMaintenanceReason:IEntity
     {
