@@ -12,7 +12,7 @@ namespace Naftan.CMMS.Domain.Maintenance
         public int Id { get; set; }
         public RepairObject Object { get; set; }
         public MaintenanceType MaintenanceType { get; set; }
-        public DateTime LastMaintenanceDate { get; private set; }
+        public DateTime? LastMaintenanceDate { get; private set; }
         /// <summary>
         /// Наработка с последнего обслуживания, если межремонтный интервал по времени, то наработка не учитывается
         /// </summary>

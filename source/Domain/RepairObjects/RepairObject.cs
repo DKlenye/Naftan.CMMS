@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Naftan.CMMS.Domain.Maintenance;
 using Naftan.CMMS.Domain.Specifications;
 using Naftan.CMMS.Domain.Usage;
 using Naftan.Infrastructure.Domain;
-using Naftan.Infrastructure.Domain.EntityComponents;
 
 namespace Naftan.CMMS.Domain.RepairObjects
 {
@@ -133,6 +131,6 @@ namespace Naftan.CMMS.Domain.RepairObjects
         /// Наработка с начала экслуатации
         /// </summary>
         public int UsageFromStartup { get; internal set; }
-        
+                
     }
 }

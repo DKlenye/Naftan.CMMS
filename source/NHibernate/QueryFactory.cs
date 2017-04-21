@@ -2,6 +2,7 @@
 using System.Linq;
 using Naftan.CMMS.Domain;
 using Naftan.CMMS.Domain.Maintenance;
+using Naftan.CMMS.Domain.Usage;
 using Naftan.Infrastructure.NHibernate;
 using NHibernate;
 using NHibernate.Linq;
@@ -25,6 +26,11 @@ namespace Naftan.CMMS.NHibernate
         }
 
         public IEnumerable<MaintenanceInterval> FindMaintenanceIntervalsByObjectId(int objectId)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public UsagePlanned FindUsagePlannedByObjectId(int objectId)
         {
             throw new System.NotImplementedException();
         }

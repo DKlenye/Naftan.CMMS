@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Naftan.CMMS.Domain.RepairObjects;
 using Naftan.Infrastructure.Domain;
-using Naftan.Infrastructure.Domain.EntityComponents;
 
 namespace Naftan.CMMS.Domain.Maintenance
 {

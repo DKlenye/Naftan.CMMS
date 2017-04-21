@@ -81,8 +81,51 @@ namespace Naftan.CMMS.Domain.Impl
             });
         }
 
-        public void PlanningMaintenance()
+        public void PlanningMaintenance(RepairObject repairObject, DateTime start, DateTime end)
         {
+            var intervals = query.FindMaintenanceIntervalsByObjectId(repairObject.Id);
+            var last = query.FindLastMaintenanceByObjectId(repairObject.Id);
+
+            var intervalType = intervals.First().IntervalType;
+
+            switch (intervalType)
+            {
+                case MaintenanceIntervalType.ByTime:
+                {
+                    break;
+                }
+                case MaintenanceIntervalType.ByUsage:
+                {
+
+                    var usagePlanned = query.FindUsagePlannedByObjectId(repairObject.Id);
+                    
+                    //Исходя из плановой наработки нужно расчитать сколько ему осталось до ремонта
+                    intervals.OrderByDescending(x => x.Quantity).ToList().ForEach(x =>
+                    {
+
+                    });
+
+
+                    break;
+                }
+                default:
+                {
+                    throw new Exception("Не задан расчёт графика ППР для данного типа интервала");
+                }
+            }
+
+
+            if (intervalType == MaintenanceIntervalType.ByUsage)
+            {
+                
+            }
+
+            intervals.OrderByDescending(x=>x.Quantity).ToList().ForEach(x =>
+            {
+                
+            });
+
+
             //Посмотреть межремонтные интервалы
             //Если подходит ремонт, то добавить запись в график ППР
 
