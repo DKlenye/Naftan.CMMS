@@ -14,7 +14,7 @@ namespace Naftan.CMMS.Domain
             MaintenanceType maintenanceType,
             DateTime start,
             DateTime? end,
-            UnplannedMaintenanceReason unplannedReason);
+            MaintenanceReason unplannedReason);
 
         /// <summary>
         /// Завершить неоконченное обслуживание

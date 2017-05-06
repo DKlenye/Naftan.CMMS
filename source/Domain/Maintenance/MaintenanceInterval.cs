@@ -61,6 +61,7 @@ namespace Naftan.CMMS.Domain.Maintenance
         /// Наработка минимальная. Её может не быть
         /// </summary>
         public int? Min { get; private set; }
+
         /// <summary>
         /// Наработка максимальная
         /// </summary>

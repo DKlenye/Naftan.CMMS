@@ -2,10 +2,10 @@
 {
     public enum SpecificationType
     {
-        Number,
-        Boolean,
-        String,
-        Date,
-        Reference
+        Boolean = 1,
+        String = 2,
+        Number = 3,
+        Date = 4,
+        Reference = 5
     }
 }

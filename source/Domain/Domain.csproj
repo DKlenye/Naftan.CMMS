@@ -43,13 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\OperationalReport.cs" />
     <Compile Include="ICommandFactory.cs" />
     <Compile Include="Impl\CommandFactory.cs" />
     <Compile Include="IQueryFactory.cs" />
     <Compile Include="Maintenance\MaintenanceIntervalType.cs" />
     <Compile Include="Maintenance\LastMaintenance.cs" />
+    <Compile Include="Maintenance\MaintenanceOffer.cs" />
     <Compile Include="Maintenance\MaintenancePlanDetails.cs" />
-    <Compile Include="Maintenance\UnplannedMaintenanceReason.cs" />
+    <Compile Include="Maintenance\MaintenanceReason.cs" />
+    <Compile Include="RepairObjects\SparePart.cs" />
     <Compile Include="Usage\UsageActual.cs" />
     <Compile Include="Usage\UsagePlanned.cs" />
     <Compile Include="RepairObjects\Department.cs" />

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Naftan.CMMS.Domain.Specifications;
-using Naftan.CMMS.Domain.Usage;
 using Naftan.Infrastructure.Domain;
 
 namespace Naftan.CMMS.Domain.RepairObjects
@@ -127,10 +126,15 @@ namespace Naftan.CMMS.Domain.RepairObjects
 
         #endregion
 
+        #region Запчасти
+
+
+        
+        #endregion
+
         /// <summary>
         /// Наработка с начала экслуатации
         /// </summary>
-        public int UsageFromStartup { get; internal set; }
-                
+        public int UsageFromStartup { get; internal set; }     
     }
 }

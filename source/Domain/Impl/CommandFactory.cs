@@ -23,7 +23,7 @@ namespace Naftan.CMMS.Domain.Impl
             MaintenanceType maintenanceType,
             DateTime start,
             DateTime? end,
-            UnplannedMaintenanceReason unplannedReason
+            MaintenanceReason unplannedReason
             )
         {
             //Добавить запись в журнал обслуживания
@@ -162,6 +162,9 @@ namespace Naftan.CMMS.Domain.Impl
             repository.Save(repairObject);
         }
 
-        
+        public void PlanningMaintenance()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

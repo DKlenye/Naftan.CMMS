@@ -3,9 +3,9 @@
 namespace Naftan.CMMS.Domain.Maintenance
 {
     /// <summary>
-    /// Причина внепланового обслуживания
+    /// Причина проведения обслуживания
     /// </summary>
-    public class UnplannedMaintenanceReason:IEntity
+    public class MaintenanceReason:IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
