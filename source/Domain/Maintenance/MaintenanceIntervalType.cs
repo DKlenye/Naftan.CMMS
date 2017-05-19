@@ -11,6 +11,10 @@ namespace Naftan.CMMS.Domain.Maintenance
         ByUsage = 1,
 
         [Description("По времени")]
-        ByTime = 2
+        ByTime = 2,
+
+        [Description("По наработке и по времени")]
+        ByUsageAndTime = 3
+
     }
 }

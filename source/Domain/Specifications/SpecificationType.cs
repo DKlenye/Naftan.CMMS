@@ -4,8 +4,9 @@
     {
         Boolean = 1,
         String = 2,
-        Number = 3,
-        Date = 4,
-        Reference = 5
+        Int = 3,
+        Decimal = 4,
+        Date = 5,
+        Reference = 6
     }
 }

@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Naftan.CMMS.Domain.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -47,11 +48,12 @@
     <Compile Include="ICommandFactory.cs" />
     <Compile Include="Impl\CommandFactory.cs" />
     <Compile Include="IQueryFactory.cs" />
-    <Compile Include="Maintenance\MaintenanceIntervalType.cs" />
     <Compile Include="Maintenance\LastMaintenance.cs" />
+    <Compile Include="Maintenance\MaintenanceIntervalType.cs" />
     <Compile Include="Maintenance\MaintenanceOffer.cs" />
     <Compile Include="Maintenance\MaintenancePlanDetails.cs" />
     <Compile Include="Maintenance\MaintenanceReason.cs" />
+    <Compile Include="RepairObjects\Nomenclature.cs" />
     <Compile Include="RepairObjects\SparePart.cs" />
     <Compile Include="Usage\UsageActual.cs" />
     <Compile Include="Usage\UsagePlanned.cs" />
@@ -75,7 +77,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepairObjects\RepairObject.cs" />
     <Compile Include="RepairObjects\RepairObjectGroup.cs" />
-    <Compile Include="Test.cs" />
     <Compile Include="TimePeriod.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -3,6 +3,9 @@ using Naftan.Infrastructure.Domain;
 
 namespace Naftan.CMMS.Domain.Specifications
 {
+    /// <summary>
+    /// Групповая тех. характеристика
+    /// </summary>
     public class GroupSpecification:IEntity
     {
         public GroupSpecification(Specification specification)

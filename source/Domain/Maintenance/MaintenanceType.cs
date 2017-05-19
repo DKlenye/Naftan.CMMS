@@ -8,6 +8,13 @@ namespace Naftan.CMMS.Domain.Maintenance
     public class MaintenanceType:IEntity
     {
         public int Id { get; set; }
+        /// <summary>
+        /// Наименование
+        /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// Обозначение
+        /// </summary>
+        public string Designation { get; set; }
     }
 }

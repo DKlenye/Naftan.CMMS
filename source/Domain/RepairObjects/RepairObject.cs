@@ -14,9 +14,10 @@ namespace Naftan.CMMS.Domain.RepairObjects
         private readonly ICollection<ObjectSpecification> specifications = new HashSet<ObjectSpecification>();
         private readonly ICollection<ObjectOperatingState> states = new HashSet<ObjectOperatingState>();
 
-        public RepairObject(RepairObjectGroup group, DateTime startOperating)
+        public RepairObject(RepairObjectGroup group, string techIndex, DateTime startOperating)
         {
             Group = group;
+            TechIndex = techIndex;
             AddSpecificationsFromGroup(group);
             StartOperating = startOperating;
             ChangeOperatingState(OperatingState.Operating, startOperating);
@@ -54,7 +55,7 @@ namespace Naftan.CMMS.Domain.RepairObjects
         /// <summary>
         /// Технологический индекс
         /// </summary>
-        public string TechIndex { get; set; }
+        public string TechIndex { get; private set; }
         
         /// <summary>
         /// Дата ввода в эксплуатацию
@@ -119,7 +120,7 @@ namespace Naftan.CMMS.Domain.RepairObjects
         /// <param name="group"></param>
         private void AddSpecificationsFromGroup(RepairObjectGroup group)
         {
-            group.Specifications.ToList().ForEach(f=>AddSpecification(new ObjectSpecification {Specification = f.Specification,Value = f.DefaultValue}));
+            group.Specifications.ToList().ForEach(f=>AddSpecification(new ObjectSpecification(f.Specification,f.DefaultValue)));
             if(group.Parent!=null)
                 AddSpecificationsFromGroup(group.Parent);
         }
@@ -128,7 +129,7 @@ namespace Naftan.CMMS.Domain.RepairObjects
 
         #region Запчасти
 
-
+        //todo запчасти
         
         #endregion
 
